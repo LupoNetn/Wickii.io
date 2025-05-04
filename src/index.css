@@ -1,0 +1,72 @@
+/* // Color palette to use across components:
+// Primary: indigo-600 (#4F46E5)
+// Secondary: violet-500 (#8B5CF6)
+// Accent: rose-500 (#F43F5E)
+// Background: gradient from indigo-50 to violet-50
+// Glass effect: bg-white/80 with backdrop-blur */
+
+@import "tailwindcss";
+@tailwind utilities;
+
+/* Custom Colors - Access via CSS variables */
+:root {
+  --brand-emerald: #10B981;
+  --brand-emerald-light: #34D399;
+  --brand-emerald-dark: #059669;
+  --brand-gray: #111827;
+  --brand-gray-light: #1F2937;
+  --brand-gray-overlay: rgba(17, 24, 39, 0.8);
+}
+
+/* Custom Utility Classes */
+.gradient-hover {
+  @apply transition-all duration-300 hover:scale-[1.02];
+}
+
+.glass-effect {
+  @apply bg-gray-900/80 backdrop-blur-sm;
+}
+
+.icon-button {
+  @apply transform transition-all duration-200 
+         hover:scale-110 p-2 rounded-lg;
+}
+
+.video-card {
+  @apply bg-gray-900/95 border border-gray-800 
+         rounded-xl overflow-hidden shadow-xl mb-6 
+         cursor-pointer transition-transform 
+         hover:-translate-y-1;
+}
+
+.video-overlay {
+  @apply absolute inset-0 bg-gradient-to-t 
+         from-gray-900/90 to-transparent 
+         transition-opacity duration-300;
+}
+
+.avatar {
+  @apply rounded-full bg-emerald-500/20 
+         flex items-center justify-center 
+         ring-2 ring-emerald-500/20;
+}
+
+.progress-bar {
+  @apply flex-1 h-1 bg-gray-600 rounded-full overflow-hidden;
+}
+
+/* Theme Colors */
+.dark {
+  --bg-primary: #111827;
+  --bg-secondary: #1F2937;
+  --text-primary: #F9FAFB;
+  --text-secondary: #D1D5DB;
+  color-scheme: dark;
+}
+
+.light {
+  --bg-primary: #F9FAFB;
+  --bg-secondary: #F3F4F6;
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+}
